@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Scamazon — The Ridiculous Marketplace</title>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Scamazon</h1>
+      <p class="tag">All products are jokes — buyer beware (and laugh loud).</p>
+    </header>
+
+    <main>
+      <section class="products">
+        {% for p in products %}
+        <article class="product">
+          <h2><a href="/product/{{ p.id }}">{{ p.name }}</a></h2>
+          <p class="price">{{ p.price }}</p>
+          <p class="short">{{ p.short }}</p>
+          <p class="note">{{ p.scam_note }}</p>
+        </article>
+        {% endfor %}
+      </section>
+    </main>
+
+    <footer>
+      <p>Educational parody site. Do not use this to defraud or mislead anyone.</p>
+    </footer>
+  </body>
+</html>
